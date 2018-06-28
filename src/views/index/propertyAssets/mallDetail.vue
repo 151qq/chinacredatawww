@@ -42,7 +42,7 @@
           <el-collapse-item class="float-form-box" title="物业相册" name="2">
             <upload-list :img-lists="imgList"
                           :id-name="'propertyAlbum'"
-                          :is-edit="baseData.recoder == userInfo.userCode"
+                          :is-edit="false"
                           :pro-cover="baseData.mallCover"
                           @changeImg="changeImg"
                           @setImg="setImg"
@@ -213,7 +213,6 @@ export default {
               method: 'get',
               interface: 'listPage',
               data: {
-                  enterpriseCode: this.$route.query.enterpriseCode,
                   docFolder: docCode,
                   pageNumber: 1,
                   pageSize: 1000

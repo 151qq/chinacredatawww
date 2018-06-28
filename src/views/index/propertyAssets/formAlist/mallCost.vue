@@ -14,7 +14,7 @@
         </el-table-column>
         <el-table-column
           prop="totalCost"
-          label="总成本">
+          label="总成本(元)">
         </el-table-column>
         <el-table-column
           label="操作"
@@ -81,11 +81,6 @@ export default {
               }
           }).then(res => {
               if (res.result.success == '1') {
-                if (res.result.result.length) {
-                  res.result.result.forEach((item) => {
-                    item.totalCost = Number(item.maintainCost) + Number(item.hrCost) + Number(item.managementCost) + Number(item.energyCost) + Number(item.adCost) + Number(item.businessManagementCost) + Number(item.tax) + Number(item.otherCost)
-                  })
-                }
                 this.total = Number(res.result.total)
                 this.barrieList = res.result.result
               } else {

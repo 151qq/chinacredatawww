@@ -14,55 +14,55 @@
             </div>
           </section>
           <section class="formBox">
-              <span>年化租金</span>
+              <span>年化租金(元)</span>
               <div class="input-box">
                 {{barrieData.annualRentIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>能源费</span>
+              <span>能源费(元)</span>
               <div class="input-box">
                 {{barrieData.energyIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>物业管理费</span>
+              <span>物业管理费(元)</span>
               <div class="input-box">
                 {{barrieData.estateManagementIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>广告费</span>
+              <span>广告费(元)</span>
               <div class="input-box">
                 {{barrieData.adIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>车位费</span>
+              <span>车位费(元)</span>
               <div class="input-box">
                 {{barrieData.packingLotIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>花车费</span>
+              <span>花车费(元)</span>
               <div class="input-box">
                 {{barrieData.flowerIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>其他收入</span>
+              <span>其他收入(元)</span>
               <div class="input-box">
                 {{barrieData.otherIncome}}
               </div>
           </section>
           <section class="formBox">
-              <span>总收入</span>
+              <span>总收入(元)</span>
               <div class="input-box">
                 {{barrieData.totalIncome}}
               </div>
               
           </section>
-          <section class="formBox bigF">
+          <section class="formBox">
             <span>其他收入说明</span>
             <div class="input-box">
                 {{barrieData.otherIncomeDesc}}

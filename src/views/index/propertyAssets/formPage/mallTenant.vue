@@ -4,13 +4,13 @@
           <section class="formBox">
               <span>开始时间</span>
               <div class="input-box">
-                {{barrieData.beginDate.length ? barrieData.beginDate : ''}}
+                {{barrieData.beginDate.length ? barrieData.beginDate.split(' ')[0] : ''}}
               </div>
           </section>
           <section class="formBox">
               <span>结束时间</span>
               <div class="input-box">
-                {{barrieData.endDate.length ? barrieData.endDate : ''}}
+                {{barrieData.endDate.length ? barrieData.endDate.split(' ')[0] : ''}}
               </div>
           </section>
           <section class="formBox">

@@ -6,18 +6,15 @@
       <div class="nav-box">
         <router-link  :to="{
                         name: 'zone-list'
-                      }"
-                      v-if="isRoot || isProperty">
+                      }">
           物业资产
         </router-link>
         <router-link  :to="{
                         name: 'exchange-list'
-                      }"
-                      v-if="isRoot || isAssets">
+                      }">
           资管产品
         </router-link>
-        <router-link :to="{ name: 'enterprise'}"
-                      v-if="isRoot || isEnterprise">
+        <router-link :to="{ name: 'enterprise'}">
           企业信息
         </router-link>
       </div>
@@ -42,7 +39,7 @@
 
       <div class="select-city-box"
             v-if="selectCity.cityName && $route.name === 'zone-list'">
-        <span @click="addCity">
+        <span>
           {{selectCity.cityName}}
           &nbsp;<i class="el-icon-caret-bottom"></i>
         </span>
@@ -177,7 +174,6 @@ export default {
     }
   },
   created () {
-    this.getUserInfo()
     this.haveCitys()
     this.getCitys()
 
@@ -413,33 +409,6 @@ export default {
             }
         })    
     },
-    getUserInfo () {
-      util.request({
-        method: 'get',
-        interface: 'getUserInfo',
-        data: {}
-      }).then(res => {
-        if (res.result.success == '1') {
-          if (res.result.result.enterpriseCode) {
-            var roleCodes = []
-            res.result.result.roleDefs.forEach((item) => {
-                roleCodes.push(item.roleCode)
-            })
-
-            this.roleCodes = roleCodes
-
-            res.result.result.roleCodes = roleCodes.concat([])
-            // 是否注册企业
-            this.setUserInfo(res.result.result)
-            this.$emit('loadPage', '1')
-          } else {
-            this.$emit('loadPage', '0')
-          }
-        } else {
-          this.$message.error(res.result.message)
-        }
-      })
-    },
     logout () {
       util.request({
         method: 'post',
@@ -447,7 +416,7 @@ export default {
         data: {}
       }).then(res => {
         if (res.result.success == '1') {
-          this.$router.replace({name: 'login'})
+          window.location.href = '/login'
         }
       })
     }

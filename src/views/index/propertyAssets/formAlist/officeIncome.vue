@@ -14,7 +14,7 @@
         </el-table-column>
         <el-table-column
           prop="totalIncome"
-          label="总收入">
+          label="总收入(元)">
         </el-table-column>
         <el-table-column
           label="操作"

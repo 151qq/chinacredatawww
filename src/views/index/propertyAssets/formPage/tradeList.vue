@@ -50,7 +50,7 @@
               </div>
           </section>
           <section class="formBox">
-              <span>交易价格</span>
+              <span>交易价格(元)</span>
               <div class="input-box">
                 {{barrieData.tradePrice}}
               </div>

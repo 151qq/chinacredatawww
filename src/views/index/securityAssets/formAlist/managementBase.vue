@@ -20,7 +20,7 @@
               </div>
           </section>
           <section class="formBox">
-              <span>总金额</span>
+              <span>总金额(元)</span>
               <div class="input-box">
                 {{base.totalMoney}}
               </div>

@@ -14,25 +14,25 @@
               </div>
           </section>
           <section class="formBox">
-              <span>总成本</span>
+              <span>总成本(元)</span>
               <div class="input-box">
                 {{barrieData.totalCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>息税前利润</span>
+              <span>息税前利润(元)</span>
               <div class="input-box">
                 {{barrieData.totalProfit}}
               </div>
           </section>
           <section class="formBox">
-              <span>折旧与摊销</span>
+              <span>折旧与摊销(元)</span>
               <div class="input-box">
                 {{barrieData.depreciationAmortization}}
               </div>
           </section>
           <section class="formBox">
-              <span>财务支出</span>
+              <span>财务支出(元)</span>
               <div class="input-box">
                 {{barrieData.financeCost}}
               </div>
@@ -44,13 +44,13 @@
             </div>
           </section>
           <section class="formBox">
-              <span>所得税</span>
+              <span>所得税(元)</span>
               <div class="input-box">
                 {{barrieData.incomeTax}}
               </div>
           </section>
           <section class="formBox">
-              <span>净利润</span>
+              <span>净利润(元)</span>
               <div class="input-box">
                 {{barrieData.netProfit}}
               </div>
@@ -62,7 +62,7 @@
               </div>
           </section>
           <section class="formBox">
-              <span>估值</span>
+              <span>估值(元)</span>
               <div class="input-box">
                 {{barrieData.propertyValue}}
               </div>

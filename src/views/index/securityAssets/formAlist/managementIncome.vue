@@ -4,13 +4,13 @@
       <section class="inForm inTwoForm" v-if="itemInfo && itemInfo.totalProfitList">
         <div class="formDiscount static-box">
           <section class="formBox">
-              <span>预测现金流</span>
+              <span>预测现金流(元)</span>
               <div class="input-box">
                 {{itemInfo.productCashFlow.forcastCashFlow}}
               </div>
           </section>
           <section class="formBox">
-              <span>真实现金流</span>
+              <span>真实现金流(元)</span>
               <div class="input-box">
                 {{itemInfo.productCashFlow.realCashFlow}}
               </div>
@@ -54,13 +54,13 @@
           </section>
           <div class="clear"></div>
           <section class="formBox">
-              <span>预测现金流</span>
+              <span>预测现金流(元)</span>
               <div class="input-box">
                   {{item.assetCashFlow.forcastCashFlow}}
               </div>
           </section>
           <section class="formBox">
-              <span>真实现金流</span>
+              <span>真实现金流(元)</span>
               <div class="input-box">
                   {{item.assetCashFlow.realCashFlow}}
               </div>

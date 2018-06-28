@@ -14,7 +14,7 @@
         </el-table-column>
         <el-table-column
           prop="totalCost"
-          label="总成本">
+          label="总成本(元)">
         </el-table-column>
         <el-table-column
           label="操作"

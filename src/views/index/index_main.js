@@ -4,6 +4,7 @@ import VueHtml5Editor from 'vue-html5-editor'
 import jsCookie from 'js-cookie'
 import routes from './router'
 import Element from 'element-ui'
+import util from '../../assets/common/util'
 import store from '../../vuex/store'
 import $ from 'Jquery'
 import 'element-ui/lib/theme-default/index.css'
@@ -42,68 +43,6 @@ Vue.use(VueHtml5Editor, {
 Vue.use(VueRouter)
 Vue.use(Element)
 
-Vue.directive('my-integer', {
-  componentUpdated (el, binding, vnode) {
-    if (!binding.expression) {
-        throw 'no expression'
-    }
-
-    if (binding.value === binding.oldValue && binding.value !== '') {
-        return
-    }
-
-    var elementInput = $(el).find('input')
-    elementInput.val(binding.value)
-    elementInput.on('keyup', function(){
-        var value = $(this).val()
-        if (/[^0-9]*/.test(value)) {
-            value = value.replace(/[^0-9]*/g, '')
-        }
-        $(this).val(value)
-
-        eval("vnode.context." + binding.expression + "= value")
-    })
-  }
-})
-
-Vue.directive('my-float', {
-  componentUpdated (el, binding, vnode) {
-    if (!binding.expression) {
-        throw 'no expression'
-    }
-
-    if (binding.value === binding.oldValue && binding.value !== '') {
-        return
-    }
-
-    var elementInput = $(el).find('input')
-    elementInput.val(binding.value)
-    elementInput.on('keyup', function(){
-        var value = $(this).val()
-        if (/[^0-9 | .]*/.test(value)) {
-            value = value.replace(/[^0-9 | .]*/g, '')
-        }
-
-        var index = value.indexOf('.')
-
-        if (index === 0) {
-            value = ''
-        }
-
-        if (value.split('.').length > 2) {
-            value = value.split('.')[0]
-        }
-
-        if (index > 0) {
-            value = value.substring(0, index + 3)
-        }
-        $(this).val(value)
-        eval("vnode.context." + binding.expression + "= value")
-    })
-  }
-})
-
-
 // 实例化VueRouter
 const router = new VueRouter({
   mode: 'history',
@@ -113,18 +52,55 @@ const router = new VueRouter({
 // 验证登录
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title
+    // 滚动置顶
+    window.scrollTo && window.scrollTo(0, 0)
+
+    // 登陆状态
     var e2Token = jsCookie.get('socialmarketing_cloud_user')
     if (!e2Token && to.name !== 'login') {
         window.location.href = '/login'
     }
 
+    // 域名默认访问页面
     if (to.name == 'home') {
         next('/propertyAssets')
+        return
+    }
+    // 进入登陆页
+    if (to.name == 'login') {
+        next()
+        return
     }
 
-    // 滚动置顶
-    window.scrollTo && window.scrollTo(0, 0)
-    next()
+    // 获取用户信息
+    if (!store.state.userInfo.userCnName) {
+        util.request({
+            method: 'get',
+            interface: 'getUserInfo',
+            data: {
+                loginType: 'enterprise'
+            }
+        }).then(res => {
+            if (res.result.success == '1') {
+                if (res.result.result.enterpriseCode) {
+                    var roleCodes = []
+                    res.result.result.roleDefs.forEach((item) => {
+                        roleCodes.push(item.roleCode)
+                    })
+
+                    res.result.result.roleCodes = roleCodes.concat([])
+                    // 是否注册企业
+                    store.commit('setUserInfo', res.result.result)
+
+                    next()
+                }
+            } else {
+              alert(res.result.message)
+            }
+        })
+    } else {
+        next()
+    }
 })
 
 new Vue({

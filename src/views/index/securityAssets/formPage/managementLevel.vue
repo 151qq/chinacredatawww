@@ -20,7 +20,7 @@
               </div>
           </section>
           <section class="formBox">
-              <span>发行规模(万元)</span>
+              <span>发行规模(元)</span>
               <div class="input-box">
                 {{barrieData.fundLevelMoney}}
               </div>

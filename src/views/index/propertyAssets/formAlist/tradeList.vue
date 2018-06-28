@@ -50,7 +50,7 @@
         </el-table-column>
         <el-table-column
           prop="tradePrice"
-          label="交易价格">
+          label="交易价格(元)">
         </el-table-column>
         <el-table-column
           label="操作"

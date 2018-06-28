@@ -213,7 +213,6 @@ export default {
               method: 'get',
               interface: 'listPage',
               data: {
-                  enterpriseCode: this.$route.query.enterpriseCode,
                   docFolder: docCode,
                   pageNumber: 1,
                   pageSize: 1000

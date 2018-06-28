@@ -16,7 +16,7 @@ export default {
         uploadFile: platform + 'platformFile/uploadFile.json',
         disOfEnterpriseInfo: platform + 'enterprise/disOfEnterpriseInfo.json',
         findDictionaryByType: platform + 'enterprise/findDictionaryByType.json',
-        platformDictionaryQuery: platform + 'platformDictionary/query.json',
+        platformDictionaryQuery: platform + 'dictionary/list.json',
 
         /**
         * 企业 get

@@ -4,13 +4,13 @@
           <section class="formBox bigBigSpan">
               <span>开始时间</span>
               <div class="input-box">
-                {{barrieData.beginDate.length ? barrieData.beginDate : ''}}
+                {{barrieData.beginDate.length ? barrieData.beginDate.split(' ')[0] : ''}}
               </div>
           </section>
           <section class="formBox bigBigSpan">
               <span>结束时间</span>
               <div class="input-box">
-                {{barrieData.endDate.length ? barrieData.endDate : ''}}
+                {{barrieData.endDate.length ? barrieData.endDate.split(' ')[0] : ''}}
               </div>
           </section>
           <section class="formBox bigBigSpan">
@@ -38,13 +38,13 @@
               </div>
           </section>
           <section class="formBox bigBigSpan">
-              <span>时租停车费</span>
+              <span>时租停车费(元)</span>
               <div class="input-box">
                 {{barrieData.parkingHourFee}}
               </div>
           </section>
           <section class="formBox bigBigSpan">
-              <span>月租停车费</span>
+              <span>月租停车费(元)</span>
               <div class="input-box">
                 {{barrieData.parkingMonthFee}}
               </div>

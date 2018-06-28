@@ -35,7 +35,7 @@ module.exports = {
 
   dev: {
     env: require('./dev.env'),
-    port: 8890,
+    port: 8889,
     autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -50,7 +50,7 @@ module.exports = {
         }
       },
       '/e2-platform-api': {
-        target: 'http://139.129.130.220:8082',
+        target: 'http://192.168.16.110:8080',
         changeOrigin: true,
         pathRewrite: {
           '^/e2-platform-api': ''

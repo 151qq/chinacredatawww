@@ -36,7 +36,7 @@
                               :s-name="'enterpriseNameReg'"></search-input>
           </section>
           <section class="formBox">
-              <span>发行价格(万元)</span>
+              <span>发行价格(元)</span>
               <div class="input-box">
                 {{base.issuePrice}}
               </div>

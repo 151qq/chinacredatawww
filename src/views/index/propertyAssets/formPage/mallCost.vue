@@ -14,60 +14,60 @@
             </div>
           </section>
           <section class="formBox">
-              <span>运维成本</span>
+              <span>运维成本(元)</span>
               <div class="input-box">
                 {{barrieData.maintainCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>人力成本</span>
+              <span>人力成本(元)</span>
               <div class="input-box">
                 {{barrieData.hrCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>管理成本</span>
+              <span>管理成本(元)</span>
               <div class="input-box">
                 {{barrieData.managementCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>能源成本</span>
+              <span>能源成本(元)</span>
               <div class="input-box">
                 {{barrieData.energyCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>营销成本</span>
+              <span>营销成本(元)</span>
               <div class="input-box">
                 {{barrieData.adCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>商业管理成本</span>
+              <span>商业管理成本(元)</span>
               <div class="input-box">
                 {{barrieData.businessManagementCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>税费</span>
+              <span>税费(元)</span>
               <div class="input-box">
                 {{barrieData.tax}}
               </div>
           </section>
           <section class="formBox">
-              <span>其他成本</span>
+              <span>其他成本(元)</span>
               <div class="input-box">
                 {{barrieData.otherCost}}
               </div>
           </section>
           <section class="formBox">
-              <span>总成本</span>
+              <span>总成本(元)</span>
               <div class="input-box">
                 {{barrieData.totalCost}}
               </div>
           </section>
-          <section class="formBox bigF">
+          <section class="formBox">
             <span>其他成本说明</span>
             <div class="input-box">
               {{barrieData.otherCostDesc}}
